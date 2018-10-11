@@ -1,7 +1,7 @@
 ---
 # This playbook deploys a simple standalone Tomcat 7 server.
 
-- hosts: tag_ProductOS_Webapp
+- hosts: tag_ProductOS_Tomcat
   remote_user: root
   become: yes
   become_method: sudo
