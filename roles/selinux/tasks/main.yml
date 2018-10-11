@@ -14,6 +14,10 @@
   when: "ansible_os_family == 'RedHat' and ansible_distribution_major_version == '7'"
 
 - name: Install EPEL Repo - Centos/RHEL 7
+  shell: export HTTP_PROXY=http://172.31.13.6:3128
+  shell: export HTTPS_PROXY=http://172.31.13.6:3128
+  shell: export http_proxy=http://172.31.13.6:3128
+  shell: export https_proxy=http://172.31.13.6:3128
   command: rpm -ivh /tmp/epel-release-latest-7.noarch.rpm creates=/etc/yum.repos.d/epel.repo
   when: "ansible_os_family == 'RedHat' and ansible_distribution_major_version == '7'"
   state: present
